@@ -1,0 +1,110 @@
+<div class="seciton-left">
+</div>
+  <div
+    class="form-holder height-100vh mat-elevation-z4"
+    [perfectScrollbar]="{}"
+  >
+    <form
+      [formGroup]="registrationDataGroup"
+      class="signup-form"
+      fxLayout="column"
+      fxLayoutAlign="start"
+    >
+      <!-- headline -->
+      <div class="mb-10" fxLayout="row wrap" fxLayoutAlign="center center">
+        <img width="100px" src="assets/images/logo/logo-lg.png" alt="">
+    </div>
+      <div class="form-headline text-center mb-16">
+        <h1 class="font-weight-bold">Сайт</h1>
+        <p class="">Слоган
+        </p>
+     </div>
+      
+      <div fxLayout="row wrap" fxLayoutGap.md="16px" fxLayoutGap.lg="16px">
+        
+        <input-component
+        [options]="firstnameInputOptions"
+        [control]="firstnameControl"
+        (onKeypress)="onKeypress($event)"></input-component>
+
+        <input-component
+        [options]="lastnameInputOptions"
+        [control]="lastnameControl"
+        (onKeypress)="onKeypress($event)"></input-component>
+
+      </div>
+
+      <input-component
+        [options]="companynameInputOptions"
+        [control]="companynameControl"
+        (onKeypress)="onKeypress($event)"></input-component>
+
+      <input-component
+        [options]="phonenumberInputOptions"
+        [control]="phonenumberControl"
+        (onKeypress)="onKeypress($event)"></input-component>
+
+      <input-component
+        [options]="emailInputOptions"
+        [control]="emailControl"
+        (onKeypress)="onKeypress($event)"></input-component>
+
+      <textarea-component
+        [options]="companydescriptionInputOptions"
+        [control]="companydescriptionControl"
+        (onKeypress)="onKeypress($event)"></textarea-component>
+
+      
+
+      <!-- <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          name="password"
+          placeholder="********"
+        />
+      </mat-form-field> -->
+
+      <!-- <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Confirm password</mat-label>
+        <input
+          matInput
+          type="password"
+          name="confirm_password"
+          placeholder="********"
+          formControlName="confirmPassword"
+        />
+        <mat-error>
+          Password didn't match
+        </mat-error>
+      </mat-form-field> -->
+      <div class="text-left mb-10">
+        <a  (click)="openDialog()"
+          class="mat-color-primary text-left full-width"
+          >Условия соглашения</a
+        >
+      </div>
+      <mat-checkbox class="mb-24 mt-24" 
+        >С условиями ознакомился и согласен</mat-checkbox
+      >
+      <button (click)="doRegister()"  mat-raised-button color="primary">Отправить</button>
+      <mat-divider class="my-32"></mat-divider>
+
+    <!--   <div fxLayout="column" fxLayoutGap="16px" class="mb-24">
+        <button mat-raised-button color="warn" type="button">
+          Signup with Auth0
+        </button>
+        <button mat-raised-button color="warn" type="button">Firebase Signup</button>
+      </div> -->
+
+      <div class="text-left">
+          <a
+            [routerLink]="'/sessions/autorization'"
+            class="mat-color-primary text-center full-width"
+            >Вы уже являетесь авторизованным пользователем?</a
+          >
+        </div>
+    </form>
+  </div>

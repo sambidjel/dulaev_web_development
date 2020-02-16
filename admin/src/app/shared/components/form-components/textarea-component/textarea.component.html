@@ -1,0 +1,14 @@
+
+<ng-container *ngIf="(!!options.fxFlex); else showDefaultInput">
+texs
+</ng-container>
+<ng-template #showDefaultInput>
+  <mat-form-field class="full-width" appearance="{{options.appearance}}">
+    <textarea
+    matInput
+    [formControl]="control"
+    (change)="onChange($event)"
+    required
+    placeholder="{{options.placeholder}}"></textarea>
+  </mat-form-field>
+</ng-template>

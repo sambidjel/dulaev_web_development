@@ -1,0 +1,23 @@
+
+<ng-container *ngIf="(!!options.fxFlex); else showDefaultInput">
+  <mat-form-field fxFlex="{{options.fxFlex}}" appearance="{{options.appearance}}">
+    <mat-label>{{options.label}}</mat-label>
+    <input
+      matInput
+      type="{{options.type}}"
+      [formControl]="control"
+      (change)="onChange($event)"
+      placeholder="{{options.placeholder}}"/>
+  </mat-form-field>
+</ng-container>
+<ng-template #showDefaultInput>
+  <mat-form-field class="full-width" appearance="{{options.appearance}}">
+    <mat-label>{{options.label}}</mat-label>
+    <input
+      matInput
+      type="{{options.type}}"
+      [formControl]="control"
+      (change)="onChange($event)"
+      placeholder="{{options.placeholder}}"/>
+  </mat-form-field>
+</ng-template>
